@@ -1,0 +1,19 @@
+flashear:
+----------
+$ esptool.py --port /dev/ttyUSB0 erase_flash
+
+$ esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170526-v1.9.bin
+
+
+ampy commands:
+----------------
+$ ampy -p /dev/ttyUSB0 run -n name_scriptpy
+$ ampy -p /dev/ttyUSB0 put name_script.py /main.py
+$ ampy -p /dev/ttyUSB0 get main.py
+$ ampy -p /dev/ttyUSB0 ls
+
+
+port environment:
+----------------
+$ export AMPY_PORT=/dev/ttyUSB0
+$ ampy ls
